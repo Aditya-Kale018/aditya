@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { Download } from 'lucide-react'
 import { identity, focusAreas } from '../data/content'
 import { socials } from '../data/socials'
 import { SocialIcon } from './SocialIcon'
@@ -112,6 +113,14 @@ export function Hero() {
                 <SocialIcon icon={s.key} />
               </a>
             ))}
+            <a
+              href="/resume.pdf"
+              download
+              aria-label="Download Resume"
+              className="flex h-[38px] w-[38px] items-center justify-center border border-ink/16 text-ink transition-colors duration-200 hover:bg-ink hover:text-white"
+            >
+              <Download size={16} strokeWidth={1.7} />
+            </a>
           </motion.div>
         </div>
 
