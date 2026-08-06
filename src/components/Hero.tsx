@@ -5,6 +5,7 @@ import { identity, focusAreas } from '../data/content'
 import { socials } from '../data/socials'
 import { SocialIcon } from './SocialIcon'
 import portraitPlaceholder from '../assets/aditya.png'
+import resumePdf from '../assets/resume.pdf'
 
 const EASE = [0.22, 0.61, 0.36, 1] as const
 
@@ -114,8 +115,8 @@ export function Hero() {
               </a>
             ))}
             <a
-              href="/resume.pdf"
-              download
+              href={resumePdf}
+              download="Aditya_Kale_Resume.pdf"
               aria-label="Download Resume"
               className="flex h-[38px] w-[38px] items-center justify-center border border-ink/16 text-ink transition-colors duration-200 hover:bg-ink hover:text-bg"
             >
