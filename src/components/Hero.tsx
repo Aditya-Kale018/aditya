@@ -78,7 +78,7 @@ export function Hero() {
                 e.preventDefault()
                 document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
               }}
-              className="group inline-flex items-center gap-2.5 bg-ink px-[22px] py-3.5 text-[14px] font-extrabold text-white transition-colors duration-200 hover:bg-ink/85"
+              className="group inline-flex items-center gap-2.5 bg-ink px-[22px] py-3.5 text-[14px] font-extrabold text-bg transition-colors duration-200 hover:bg-ink/85"
             >
               View Projects
               <span className="opacity-60 transition-transform duration-200 group-hover:translate-y-0.5">
@@ -108,7 +108,7 @@ export function Hero() {
                 key={s.key}
                 href={s.href}
                 aria-label={s.label}
-                className="flex h-[38px] w-[38px] items-center justify-center border border-ink/16 text-ink transition-colors duration-200 hover:bg-ink hover:text-white"
+                className="flex h-[38px] w-[38px] items-center justify-center border border-ink/16 text-ink transition-colors duration-200 hover:bg-ink hover:text-bg"
               >
                 <SocialIcon icon={s.key} />
               </a>
@@ -117,7 +117,7 @@ export function Hero() {
               href="/resume.pdf"
               download
               aria-label="Download Resume"
-              className="flex h-[38px] w-[38px] items-center justify-center border border-ink/16 text-ink transition-colors duration-200 hover:bg-ink hover:text-white"
+              className="flex h-[38px] w-[38px] items-center justify-center border border-ink/16 text-ink transition-colors duration-200 hover:bg-ink hover:text-bg"
             >
               <Download size={16} strokeWidth={1.7} />
             </a>

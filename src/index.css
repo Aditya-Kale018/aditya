@@ -8,6 +8,17 @@
   --breakpoint-xs: 480px;
 }
 
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-ink: #f5f4f2;
+  --color-bg: #0d0d0d;
+  --color-surface: #1a1a1a;
+}
+
 @layer base {
   * {
     box-sizing: border-box;
@@ -25,14 +36,17 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    transition:
+      background-color 0.35s ease,
+      color 0.35s ease;
   }
 
   ::selection {
-    background: rgba(17, 17, 17, 0.14);
+    background: color-mix(in srgb, var(--color-ink) 14%, transparent);
   }
 
   :focus-visible {
-    outline: 2px solid #111111;
+    outline: 2px solid var(--color-ink);
     outline-offset: 2px;
   }
 
@@ -56,10 +70,10 @@
 
 @utility rule {
   height: 2px;
-  background: #111111;
+  background: var(--color-ink);
 }
 
 @utility hairline {
   height: 1px;
-  background: rgba(17, 17, 17, 0.14);
+  background: color-mix(in srgb, var(--color-ink) 14%, transparent);
 }

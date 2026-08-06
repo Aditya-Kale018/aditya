@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, animate, motion, useMotionValue } from 'framer-motion'
 import { useScrolled } from '../hooks/useScrolled'
 import { useActiveSection } from '../hooks/useActiveSection'
+import { useTheme } from '../hooks/useTheme'
 import { identity } from '../data/content'
+import { ThemeToggle } from './ThemeToggle'
 
 const NAV_LINKS = [
   { id: 'about', label: 'About', condensed: true },
@@ -20,6 +22,7 @@ export function Nav() {
   const scrolled = useScrolled(72)
   const active = useActiveSection(NAV_LINKS.map((l) => l.id))
   const [menuOpen, setMenuOpen] = useState(false)
+  const { theme, toggleTheme } = useTheme()
   const fadeOpacity = useMotionValue(1)
 
   useEffect(() => {
@@ -53,9 +56,11 @@ export function Nav() {
             width: scrolled ? 'auto' : '100%',
             gap: scrolled ? 16 : 0,
             justifyContent: scrolled ? 'flex-start' : 'space-between',
-            background: scrolled ? '#111111' : 'var(--color-bg)',
-            color: scrolled ? '#ffffff' : '#111111',
-            borderBottom: scrolled ? '0px solid transparent' : '1px solid rgba(17,17,17,0.12)',
+            background: scrolled ? 'var(--color-ink)' : 'var(--color-bg)',
+            color: scrolled ? 'var(--color-bg)' : 'var(--color-ink)',
+            borderBottom: scrolled
+              ? '0px solid transparent'
+              : '1px solid color-mix(in srgb, var(--color-ink) 12%, transparent)',
             boxShadow: scrolled ? '0 3px 10px rgba(0,0,0,0.16)' : '0 0 0 rgba(0,0,0,0)',
             paddingTop: scrolled ? 9 : 16,
             paddingBottom: scrolled ? 9 : 16,
@@ -126,14 +131,18 @@ export function Nav() {
                       active === link.id
                         ? 'currentColor'
                         : scrolled
-                          ? 'rgba(255,255,255,0.72)'
-                          : 'rgba(17,17,17,0.6)',
+                          ? 'color-mix(in srgb, var(--color-bg) 72%, transparent)'
+                          : 'color-mix(in srgb, var(--color-ink) 60%, transparent)',
                   }}
                 >
                   {scrolled && link.condensedLabel ? link.condensedLabel : link.label}
                 </motion.a>
               ))}
             </AnimatePresence>
+          </motion.div>
+
+          <motion.div layout transition={LAYOUT_TRANSITION}>
+            <ThemeToggle theme={theme} onToggle={toggleTheme} size={scrolled ? 13 : 15} />
           </motion.div>
 
           <AnimatePresence initial={false}>
@@ -150,7 +159,7 @@ export function Nav() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ layout: LAYOUT_TRANSITION, opacity: { duration: 0.35, ease: EASE } }}
-                className="hidden bg-white px-2.5 py-[5px] text-[11.5px] font-extrabold text-ink transition-colors duration-200 hover:bg-white/85 md:inline-block"
+                className="hidden bg-bg px-2.5 py-[5px] text-[11.5px] font-extrabold text-ink transition-colors duration-200 hover:bg-bg/85 md:inline-block"
               >
                 Hire me
               </motion.a>
@@ -198,7 +207,7 @@ export function Nav() {
                     e.preventDefault()
                     handleNavigate(link.id)
                   }}
-                  className="border-b border-white/12 py-5 text-3xl font-extrabold tracking-tight text-white"
+                  className="border-b border-bg/12 py-5 text-3xl font-extrabold tracking-tight text-bg"
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.35, delay: 0.05 * i, ease: EASE }}

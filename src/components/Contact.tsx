@@ -24,7 +24,7 @@ export function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.6, ease: EASE }}
-        className="bg-ink text-white"
+        className="bg-ink text-bg"
       >
         <div className="content-container px-3 py-16 sm:px-5 sm:py-20 lg:px-7 lg:py-24">
           <div className="flex flex-col justify-between gap-10 sm:flex-row sm:items-end">
@@ -46,7 +46,7 @@ export function Contact() {
                   key={s.key}
                   href={s.href}
                   aria-label={s.label}
-                  className="flex h-[38px] w-[38px] items-center justify-center border border-white/25 text-white transition-colors duration-200 hover:bg-white hover:text-ink"
+                  className="flex h-[38px] w-[38px] items-center justify-center border border-bg/25 text-bg transition-colors duration-200 hover:bg-bg hover:text-ink"
                 >
                   <SocialIcon icon={s.key} />
                 </a>
@@ -54,7 +54,7 @@ export function Contact() {
             </div>
           </div>
 
-          <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-white/14 pt-6 text-[11.5px] tracking-[.1em] text-white/45 uppercase">
+          <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-bg/14 pt-6 text-[11.5px] tracking-[.1em] text-bg/45 uppercase">
             <span>{identity.location}</span>
             <span>{identity.availability}</span>
           </div>
