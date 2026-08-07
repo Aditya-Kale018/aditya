@@ -39,28 +39,28 @@ export const expertise: ExpertiseGroup[] = [
     kind: 'AI Systems',
     title: 'Agentic AI',
     body: 'Multi-agent architectures that plan, retrieve, and act — not single-shot completions.',
-    items: ['Agent orchestration', 'Tool use', 'Multi-agent coordination', 'Digital twins'],
+    items: ['Agent orchestration', 'Tool Calling', 'Multi-agent coordination', 'Digital twins', 'Workflow Automation'],
   },
   {
     num: '02',
     kind: 'AI Systems',
     title: 'RAG & Retrieval',
     body: 'Grounding LLM output in real, retrievable data so answers stay accurate and current.',
-    items: ['Vector search', 'LangChain', 'Embedding pipelines', 'Corpus design'],
+    items: ['Vector Databases', 'LangChain', 'Embedding pipelines', 'Corpus design'],
   },
   {
     num: '03',
     kind: 'Backend',
     title: 'Full-stack Engineering',
     body: 'Services and interfaces built by the same hand, so the seams disappear.',
-    items: ['Python · FastAPI', 'Node.js', 'Next.js · TypeScript', 'PostgreSQL'],
+    items: ['Python · FastAPI', 'Node.js', 'Next.js · TypeScript', 'MySql','Vercel'],
   },
   {
     num: '04',
     kind: 'Applied ML',
     title: 'Machine Learning',
     body: 'Practical ML applied to real constraints — traffic networks, markets, sensor data.',
-    items: ['Backtesting', 'Time-series', 'Model evaluation', 'Pandas · NumPy'],
+    items: ['Skicit-Learn', 'XGBoost', 'Model evaluation', 'Data Processing', 'Feature Engineering'],
   },
 ]
 
