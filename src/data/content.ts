@@ -74,7 +74,7 @@ export interface ExperienceEntry {
 export const experience: ExperienceEntry[] = [
   {
     period: 'Present',
-    roles: ['Founder & CEO', 'Frontend Designer', 'Agentic AI & Backend Struture'],
+    roles: ['Founder & CEO', 'Frontend Designer', 'Agentic AI & Backend Structure'],
     company: 'Aurelis Digital',
     summary:
       'Running Aurelis end to end — setting direction as founder, designing the interfaces the products ship with, and leading the agentic AI systems underneath them.',
