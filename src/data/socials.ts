@@ -12,8 +12,8 @@ export const socials: SocialLink[] = [
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/aditya-kale-6aa978314',
   },
-  { key: 'mail', label: 'Email', href: 'mailto:adityakale4507@gmail.com' },
+  { key: 'mail', label: 'Email', href: 'mailto:aditya@aurelis-digital.com' },
   { key: 'x', label: 'X', href: '#' },
 ]
 
-export const contactEmail = 'adityakale4507@gmail.com'
+export const contactEmail = 'aditya@aurelis-digital.com'
