@@ -49,13 +49,16 @@ export function Projects() {
                 <span className="hidden text-[12.5px] tracking-[.06em] text-ink/45 uppercase sm:block">
                   {p.kind}
                 </span>
-                <motion.span
-                  className="justify-self-end text-[18px] text-ink/35 sm:text-[20px]"
-                  animate={{ rotate: isActive ? 45 : 0 }}
-                  transition={{ duration: 0.3, ease: EASE }}
+                <a
+                  href={`/projects/${p.slug}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  aria-label={`Open live run for ${p.title} in a new tab`}
+                  className="justify-self-end text-[18px] text-ink/35 transition-colors duration-200 hover:text-ink sm:text-[20px]"
                 >
                   ↗
-                </motion.span>
+                </a>
               </div>
 
               <div
@@ -95,6 +98,23 @@ export function Projects() {
                           {s}
                         </motion.span>
                       ))}
+                      <motion.a
+                        href={`/projects/${p.slug}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        initial={false}
+                        animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : -6 }}
+                        transition={{
+                          duration: 0.28,
+                          delay: isActive ? 0.1 + p.stack.length * 0.03 : 0,
+                          ease: EASE,
+                        }}
+                        className="mt-1 flex w-full items-center gap-1.5 bg-ink px-[9px] py-[6px] text-[11.5px] font-semibold text-bg transition-colors duration-200 hover:bg-ink/85"
+                      >
+                        View Live Run
+                        <span className="opacity-70">↗</span>
+                      </motion.a>
                     </div>
                   </div>
                 </div>

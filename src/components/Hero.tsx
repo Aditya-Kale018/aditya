@@ -133,7 +133,7 @@ export function Hero() {
         >
           <div
             ref={portraitRef}
-            className="grayscale-photo relative aspect-[4/5] overflow-hidden border border-ink/14"
+            className="grayscale-photo portrait-hover-zoom relative aspect-[4/5] overflow-hidden border border-ink/14"
           >
             <motion.div
               initial={{ opacity: 0, scale: 1.08 }}
